@@ -1,0 +1,21 @@
+//Local
+docker build -t enriquefdz92/dsdproject:release
+docker images
+docker run -d -p 4001:80 enriquefdz92/dsdproject:release
+docker container ls
+http://localhost:4001
+docker container stop :CONTAINERID
+docker container rm :CONTAINERID
+docker push enriquefdz92/dsdproject:release
+
+//Cloud Console
+docker pull enriquefdz92/dsdproject:release
+docker images
+kubectl tun --image=enriquefdz92/dsdproject:release dsdprojectrelease --port:80
+kubectl get deploymets
+kubectl expose deployment dsdprojectrelease --name=dsdprojectrelease-http --type=LoadBalancer
+kubectl get services
+http://EXTERNAL-IP
+
+
+
