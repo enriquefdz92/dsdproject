@@ -11,7 +11,7 @@ docker push enriquefdz92/dsdproject:release
 //Cloud Console
 docker pull enriquefdz92/dsdproject:release
 docker images
-kubectl tun --image=enriquefdz92/dsdproject:release dsdprojectrelease --port:80
+kubectl run --image=enriquefdz92/dsdproject:release dsdprojectrelease --port:80
 kubectl get deploymets
 kubectl expose deployment dsdprojectrelease --name=dsdprojectrelease-http --type=LoadBalancer
 kubectl get services
